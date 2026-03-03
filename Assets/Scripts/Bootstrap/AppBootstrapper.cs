@@ -28,5 +28,8 @@ public class AppBootstrapper : MonoBehaviour
         );
 
         timeModel.SetTime(DateTime.Now);
+
+        timeController.Init(timeModel);
+
     }
 }
