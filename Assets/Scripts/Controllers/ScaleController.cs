@@ -18,7 +18,7 @@ public class ScaleController : MonoBehaviour
         targetRoot.localScale = newScale;
         Debug.Log($"[XR] Scale adjusted to: {newScale.x}");
     }
-    private void AdjustScale(float multiplier)
+    public void AdjustScale(float multiplier)
     {
     // On multiplie l'échelle locale actuelle par le multiplicateur
     targetRoot.localScale *= multiplier;
@@ -28,5 +28,18 @@ public class ScaleController : MonoBehaviour
     targetRoot.localScale = new Vector3(clampedX, clampedX, clampedX);
     
     Debug.Log($"[ZOOM] Échelle actuelle : {targetRoot.localScale.x}");
+    }
+
+    public void ZoomIn()
+    {
+        Debug.Log("[ZOOM] Zooming in...");
+        ChangeScale(1.2f); // Zoom in de 20%
+    }
+
+    // Fonction pour dézoomer (rétrécir)
+    public void ZoomOut()
+    {
+        Debug.Log("[ZOOM] Zooming out...");
+        ChangeScale(1f / 1.2f); // Zoom out de 20%
     }
 }
